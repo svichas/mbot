@@ -8,7 +8,7 @@ PHP library for handling a messenger bot.
 
 require 'mbot.php';
 
-$mbot = new mbot("{FACEBOOK-MESSENGER-TOKEN}");
+$mbot = new mbot("{FACEBOOK-APP-API-TOKEN}");
 
 //creating a callBack on a message
 $mbot->callBack(function($message,$sender_id,$sender_name) {
