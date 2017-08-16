@@ -51,28 +51,6 @@ class mbot {
 		return $this->sender_id;
 	}
 
-	function sendMessageTo($message, $id="") {
-		$url = "https://graph.facebook.com/v2.6/me/messages?access_token={$this->token}";
-
-		$data = [
-			"recipient" => ["id" => $id],
-			"message" => ["text" => $message]
-		];
-
-
-		$options = [
-			"http" => [
-				"method" => "POST",
-				"content" => json_encode($data),
-				"header" => "Content-Type: application/json\n"
-			]
-		];
-
-		$context = stream_context_create($options);
-		$result = file_get_contents($url, false, $context);
-
-	}
-
 	function sendMessage($message="") {
 		$url = "https://graph.facebook.com/v2.6/me/messages?access_token={$this->token}";
 
