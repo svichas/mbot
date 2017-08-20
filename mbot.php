@@ -10,7 +10,7 @@ class mbot {
 	function __construct($token="") {
 		
 		if ($token == "") {
-			echo "Please provide mbot __construct function with a facebook api token.";
+			echo "[Mbot] Please provide mbot __construct function with a facebook api token.";
 			die();
 		}
 
@@ -52,6 +52,7 @@ class mbot {
 	}
 
 	function sendMessage($message="") {
+
 		$url = "https://graph.facebook.com/v2.6/me/messages?access_token={$this->token}";
 
 		$data = [
